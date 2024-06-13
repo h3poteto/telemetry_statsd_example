@@ -16,6 +16,7 @@ defmodule Example.Application do
       # Start a worker by calling: Example.Worker.start_link(arg)
       # {Example.Worker, arg},
       # Start to serve requests, typically the last entry
+      ExampleWeb.Telemetry,
       ExampleWeb.Endpoint
     ]
 
