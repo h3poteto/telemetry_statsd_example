@@ -15,7 +15,9 @@ defmodule ExampleWeb.Telemetry do
       # Add reporters as children of your supervision tree.
       # {Telemetry.Metrics.ConsoleReporter, metrics: metrics()}
       {TelemetryMetricsStatsd,
-       metrics: metrics(), formatter: :datadog, host: System.get_env("DD_AGENT_HOST", "127.0.0.1")}
+       metrics: metrics(),
+       formatter: :datadog,
+       socket_path: System.fetch_env!("DD_AGENT_SOCKET_PATH")}
     ]
 
     Supervisor.init(children, strategy: :one_for_one)
