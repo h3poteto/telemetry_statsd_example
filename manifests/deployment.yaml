@@ -21,7 +21,7 @@ spec:
           name: dsdsocket
       containers:
         - name: example
-          image: localhost:5000/example:latest
+          image: ghcr.io/h3poteto/telemetry_statsd_example:master
           imagePullPolicy: Always
           ports:
             - name: http
